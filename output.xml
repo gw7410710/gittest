@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.6.3 on win32)" generated="20210114 19:20:16.593" rpa="false">
+<suite id="s1" name="Tc" source="F:\项目实战3\tc">
+<suite id="s1-s1" name="D空白数据" source="F:\项目实战3\tc\D空白数据">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>delete_All_organize</arg>
+<arg>AND</arg>
+<arg>delete_ALL_object</arg>
+<arg>AND</arg>
+<arg>delete_ALL_Contract_classify</arg>
+<arg>AND</arg>
+<arg>delete_ALL_contract</arg>
+</arguments>
+<kw name="Delete All Organize" library="pylib.common">
+<msg timestamp="20210114 19:20:17.377" level="INFO">{'@odata.context': 'http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/$metadata#organizations',
+ '@odata.count': 1,
+ 'value': [{'@odata.editLink': "http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/organizations('k3cR79DWPGDbYbS3q')",
+            '@odata.etag': 'W/"08D589720BBB3DB1"',
+            '@odata.id': "http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/organizations('k3cR79DWPGDbYbS3q')",
+            '_id': 'k3cR79DWPGDbYbS3q',
+            'children': [],
+            'company_id': 'k3cR79DWPGDbYbS3q',
+            'created': '2020-12-14T07:16:08.192Z',
+            'created_by': '5fd7112fb428030012f26138',
+            'fullname': '软件',
+            'hidden': False,
+            'is_company': True,
+            'modified': '2021-01-06T11:24:46.369Z',
+            'modified_by': '5fd7112fb428030012f26138',
+            'name': '软件',
+            'owner': '5fd7112fb428030012f26138',
+            'sort_no': 1,
+            'space': 'PZnFm79o6ezgmKDMt',
+            'users': ['5fd7112fb428030012f26138']}]}</msg>
+<status status="PASS" starttime="20210114 19:20:16.735" endtime="20210114 19:20:17.377"></status>
+</kw>
+<kw name="Delete ALL Object" library="pylib.common">
+<msg timestamp="20210114 19:20:17.871" level="INFO">{'@odata.context': 'http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/$metadata#accounts',
+ '@odata.count': 0,
+ 'value': []}</msg>
+<status status="PASS" starttime="20210114 19:20:17.377" endtime="20210114 19:20:17.871"></status>
+</kw>
+<kw name="Delete ALL Contract Classify" library="pylib.common.Contract_classify">
+<msg timestamp="20210114 19:20:18.378" level="INFO">{'@odata.context': 'http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/$metadata#contract_types',
+ '@odata.count': 0,
+ 'value': []}</msg>
+<status status="PASS" starttime="20210114 19:20:17.872" endtime="20210114 19:20:18.378"></status>
+</kw>
+<kw name="Delete ALL Contract" library="pylib.common.Contract">
+<msg timestamp="20210114 19:20:18.872" level="INFO">{'@odata.context': 'http://127.0.0.1:5040/api/odata/v4/PZnFm79o6ezgmKDMt/$metadata#contracts',
+ '@odata.count': 0,
+ 'value': []}</msg>
+<status status="PASS" starttime="20210114 19:20:18.378" endtime="20210114 19:20:18.872"></status>
+</kw>
+<status status="PASS" starttime="20210114 19:20:16.734" endtime="20210114 19:20:18.872"></status>
+</kw>
+<suite id="s1-s1-s1" name="添加合同" source="F:\项目实战3\tc\D空白数据\添加合同.robot">
+<test id="s1-s1-s1-t1" name="测试--9999">
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>[1,2,3]</arg>
+</arguments>
+<assign>
+<var>${list}</var>
+</assign>
+<msg timestamp="20210114 19:20:18.884" level="INFO">${list} = ['[1,2,3]']</msg>
+<status status="PASS" starttime="20210114 19:20:18.883" endtime="20210114 19:20:18.884"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>@{list}</arg>
+</arguments>
+<status status="PASS" starttime="20210114 19:20:18.884" endtime="20210114 19:20:18.885"></status>
+</kw>
+<status status="PASS" starttime="20210114 19:20:18.881" endtime="20210114 19:20:18.886" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210114 19:20:18.872" endtime="20210114 19:20:18.888"></status>
+</suite>
+<status status="PASS" starttime="20210114 19:20:16.624" endtime="20210114 19:20:18.897"></status>
+</suite>
+<status status="PASS" starttime="20210114 19:20:16.596" endtime="20210114 19:20:18.904"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Tc">Tc</stat>
+<stat pass="1" fail="0" id="s1-s1" name="D空白数据">Tc.D空白数据</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="添加合同">Tc.D空白数据.添加合同</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
